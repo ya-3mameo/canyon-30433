@@ -1,24 +1,73 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column               | Type   | Options                   |
+| -------------------- | ------ | ------------------------- |
+| nickname             | string | null: false               |
+| email                | string | null: false, unique: true |
+| password             | string | null: false, unique: true |
 
-* Ruby version
+### Association
+ - has_many :tweets
+ - has_one :profile
 
-* System dependencies
 
-* Configuration
+## profileテーブル
 
-* Database creation
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| age           | integer    |                                |
+| location      | string     |                                |
+| hobby         | text       |                                |
+| canyon_number | integer    | null: false                    |
+| birthday      | date       |                                |
+| user          | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
+- belongs_to :user
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## tweetsテーブル
 
-* Deployment instructions
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| title         | string     | null: false                    |
+| image         |            |                                |
+| concept       | text       | null: false                    |
+| price         | integer    | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| user          | references | null: false, foreign_key: true |
 
-* ...
+### Association
+- belongs_to :user
+- has_one :address
+- has_many :comments
+
+
+## addressesテーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| postal_number | string     |                                |
+| prefecture_id | integer    | null: false                    |
+| city          | string     | null: false                    |
+| house_number  | string     |                                |
+| building      | string     |                                |
+| phone_number  | string     |                                |
+| access_plan   | text       | null: false                    |
+| tweet         | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :tweet
+
+
+## commentsテーブル
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| comment_text | string     | null: false                    |
+| user         | references | null: false, foreign_key: true |
+| tweet        | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :tweet
