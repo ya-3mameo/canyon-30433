@@ -5,7 +5,7 @@ class Tweet < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
 
-  with_options precence: true do
+  with_options presence: true do
     validates :title
     validates :concept
     validates :price
