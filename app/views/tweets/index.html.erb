@@ -1,6 +1,44 @@
 <%= render "shared/header" %>
 
 <h1>僕と渓谷</h1>
-<p>デザインはまだです</p>
+<p>cssはまだです</p>
+
+<div>
+  <h2>渓谷一覧</h2>
+  <ul>
+    <% @tweets.each do |tweet| %>
+      <% if @tweets.present? %>
+        <li>
+          <%= link_to '#' do %>
+          <div>
+            <%= image_tag tweet.image if tweet.image.attached? %>
+          </div>
+          <div>
+            <h3><%= tweet.title %></h3>
+          </div>
+          <div>
+            <span>ユーザー：<%= tweet.user.nickname %></span>
+          </div>
+          <% end %>
+        </li>
+ 
+      <% else  %>
+        <li>
+          <%= image_tag  'public/images/test_image.png' %>
+          <div>
+            <h3>
+              渓谷を投稿してね！
+            </h3>
+          </div>
+          <div>
+            <span>僕と渓谷</span>
+          </div>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+
+  </ul>
+</div>
 
 <%= link_to '投稿する', new_tweet_path %>
