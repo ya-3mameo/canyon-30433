@@ -16,7 +16,7 @@ RSpec.describe Tweet, type: :model do
       it '画像が空では保存できない' do
         @tweet.image = nil
         @tweet.valid?
-        expect(@tweet.errors.full_messages).to include()
+        expect(@tweet.errors.full_messages).to include
       end
       it '渓谷名が空では保存できない' do
         @tweet.title = nil
@@ -41,7 +41,7 @@ RSpec.describe Tweet, type: :model do
       it '費用は全角数字だと場合は保存できない' do
         @tweet.price = '３４５'
         @tweet.valid?
-        expect(@tweet.errors.full_messages).to include()
+        expect(@tweet.errors.full_messages).to include
       end
       it '訪問日が空では登録できない' do
         @tweet.visit_day = ''
