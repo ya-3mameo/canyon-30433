@@ -3,3 +3,9 @@ ja:
    attributes:
      user:
        nickname: ニックネーム
+     tweet:
+       title: 渓谷名
+       concept: 「渓谷について」
+       price: 費用
+       visit_day: 訪問日
+       prefecture_id: 都道府県
