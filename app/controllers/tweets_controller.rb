@@ -33,7 +33,6 @@ class TweetsController < ApplicationController
     else
       render :edit
     end
-
   end
 
   private
