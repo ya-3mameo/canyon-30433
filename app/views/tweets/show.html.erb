@@ -1,0 +1,47 @@
+<%= render "shared/header" %>
+
+<div class="tweet-show">
+  <div class="tweet-box">
+    <h2 class="title">
+      <%= @tweet.title %>
+    </h2>
+    <div class='tweet-img-content'>
+      <%= image_tag @tweet.image ,class:"tweet-box-img" %>
+    </div>
+
+    <% if user_signed_in? %>
+      <% if current_user.id == @tweet.user_id %>
+        <p><%= link_to '渓谷情報編集', '#', class: "tweet-red-btn" %></p>
+        <p><%= link_to '投稿削除', '#', class:'tweet-destroy' %></p>
+      <% end %>
+    <% end %>
+
+    <div class="tweet-explain-box">
+      <span><%= @tweet.concept %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">ユーザー名</th>
+          <td class="detail-value"><%= @tweet.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">費用</th>
+          <td class="detail-value"><%= @tweet.price %>円</td>
+        </tr>
+        <tr>
+          <th class="detail-item">都道府県（渓谷の所在地）</th>
+          <td class="detail-value"><%= @tweet.prefecture.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">訪問日</th>
+          <td class="detail-value"><%= @tweet.visit_day %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<p><%= link_to 'アクセスページ', "#" %></p>
+
+<p><%= link_to 'トップページ', "/" %></p>
