@@ -1,8 +1,6 @@
-<%= link_to 'トップページへ戻る', "/" %>
+<h1>編集ページ</h1>
 
-<h1>投稿ページ</h1>
-
-<%= form_with model:@tweet, url: tweets_path, local: true do |f| %>
+<%= form_with model:@tweet, url: tweet_path, local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
 
   <div>
@@ -46,3 +44,6 @@
   </div>
 
 <% end %>
+
+<p><%= link_to '詳細ページへ戻る', tweet_path, method: :get %></p>
+<p><%= link_to 'マイページへ戻る', '#' %></p>
