@@ -12,7 +12,7 @@
     <% if user_signed_in? %>
       <% if current_user.id == @tweet.user_id %>
         <p><%= link_to '情報編集へ進む', edit_tweet_path(@tweet.id), method: :get, class: "tweet-red-btn" %></p>
-        <p><%= link_to '投稿を削除する', '#', class:'tweet-destroy' %></p>
+        <p><%= link_to '投稿を削除する', tweet_path(@tweet.id), method: :delete, class:'tweet-destroy' %></p>
       <% end %>
     <% end %>
 
