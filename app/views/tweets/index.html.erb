@@ -21,24 +21,18 @@
           </div>
           <% end %>
         </li>
- 
-      <% else  %>
+      <% else %>
         <li>
-          <%= image_tag  'public/images/test_image.png' %>
           <div>
-            <h3>
-              渓谷を投稿してね！
-            </h3>
+            <h3>渓谷を投稿してね</h3>
           </div>
           <div>
             <span>僕と渓谷</span>
           </div>
-          </div>
         </li>
       <% end %>
     <% end %>
-
   </ul>
 </div>
 
-<%= link_to '投稿ページへ進む', new_tweet_path %>
+<p><%= link_to '投稿ページへ進む', new_tweet_path %></p>
