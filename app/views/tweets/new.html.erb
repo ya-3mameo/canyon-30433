@@ -4,21 +4,21 @@
 
 <%= form_with model:@tweet, url: tweets_path, local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
-
+  <h2>渓谷情報</h2>
   <div>
-    <p>渓谷名</p>
+    <p>渓谷名【必須】</p>
     <%= f.text_area :title, class:"tweets-text", id:"tweet-name", placeholder:"40文字まで", maxlength:"40" %>
   </div>
   <div>
-    <p>渓谷について</p>
-    <%= f.text_area :concept, class:"tweets-text", id:"tweet-info", placeholder:"7文字以上1000文字以下", rows:"7" ,maxlength:"1000"%>
+    <p>渓谷について【必須】</p>
+    <%= f.text_area :concept, class:"tweets-text", id:"tweet-info", placeholder:"7文字以上1000文字以下", rows:"7" , maxlength:"1000" %>
   </div>
   <div>
-    <p>費用</p>
+    <p>費用【必須】</p>
     <%= f.text_field :price, class:"tweets-text", id:"tweet-price", placeholder:"半角数字" %>
   </div>
   <div>
-    <p>都道府県（渓谷の所在地）</p>
+    <p>都道府県（渓谷の所在地）【必須】</p>
     <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
   </div>
 
@@ -42,7 +42,7 @@
   </div>
 
   <div>
-    <p><%= f.submit '投稿する' %></p>
+    <p><%= f.submit '次へ' %></p>
   </div>
 
 <% end %>
