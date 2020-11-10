@@ -15,7 +15,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
     if @tweet.valid?
       @tweet.save
-      redirect_to root_path
+      redirect_to new_tweet_access_path(@tweet)
     else
       render :new
     end
