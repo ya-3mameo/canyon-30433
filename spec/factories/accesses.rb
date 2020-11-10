@@ -7,5 +7,6 @@ FactoryBot.define do
     building      { '名古屋ハイツ' }
     phone_number  { '08012345678' }
     access_plan   { 'バスで30分' }
+    association :tweet
   end
 end
