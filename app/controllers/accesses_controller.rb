@@ -1,4 +1,5 @@
 class AccessesController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   def index
   end
 
@@ -10,7 +11,6 @@ class AccessesController < ApplicationController
   def create
     @tweet = Tweet.find(params[:tweet_id])
     @access = Access.new(access_params)
-    binding.pry
     if @access.valid?
       @access.save
       redirect_to root_path
