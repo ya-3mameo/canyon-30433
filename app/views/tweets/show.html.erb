@@ -35,6 +35,8 @@
   </div>
 </div>
 
+<p><%= link_to 'アクセス情報ページへ進む', tweet_accesses_path(@tweet.id) %></p>
+
 <% if user_signed_in? %>
   <% if current_user.id == @tweet.user_id %>
     <p><%= link_to '投稿情報編集へ進む', edit_tweet_path(@tweet.id), method: :get, class: "tweet-red-btn" %></p>

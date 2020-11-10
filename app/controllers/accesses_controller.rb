@@ -1,6 +1,9 @@
 class AccessesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+
   def index
+    @tweet = Tweet.find(params[:tweet_id])
+    @access = Access.find(@tweet.access.id)
   end
 
   def new
