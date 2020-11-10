@@ -20,7 +20,13 @@ class AccessesController < ApplicationController
   end
 
   private
+
   def access_params
-    params.require(:access).permit(:postal_number, :prefecture_id, :city, :house_number, :building, :phone_number, :access_plan).merge(tweet_id: @tweet.id)
+    params.require(:access).permit(
+      :postal_number, :prefecture_id, :city, :house_number,
+      :building, :phone_number, :access_plan
+    ).merge(
+      tweet_id: @tweet.id
+    )
   end
 end

@@ -31,7 +31,7 @@ RSpec.describe Access, type: :model do
       it 'tweetが紐づいていないと出品情報は保存されない' do
         @access.id = nil
         @access.valid?
-        expect(@access.errors.full_messages).to include()
+        expect(@access.errors.full_messages).to include
       end
     end
   end
