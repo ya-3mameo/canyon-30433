@@ -2,7 +2,7 @@
 
 <h1>アクセス情報投稿ページ</h1>
 
-<%= form_with model:@access, url: accesses_path, local: true do |f| %>
+<%= form_with model:@access, url: tweet_accesses_path(@tweet), local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
 
   <h2>アクセスについて</h2>
