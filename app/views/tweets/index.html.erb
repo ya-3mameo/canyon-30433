@@ -11,7 +11,7 @@
         <li>
           <%= link_to tweet_path(tweet.id), method: :get do %>
           <div>
-            <%= image_tag tweet.image if tweet.image.attached? %>
+            <%= image_tag tweet.image.variant(resize: '400x400') if tweet.image.attached? %>
           </div>
           <div>
             <h3><%= tweet.title %></h3>
