@@ -1,0 +1,47 @@
+<h1>アクセス情報</h1>
+
+
+<div class="access-show">
+  <div class="access--box">
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">郵便番号</th>
+          <td class="detail-value"><%= @access.postal_number %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">都道府県（渓谷の所在地）</th>
+          <td class="detail-value"><%= @access.prefecture.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">市区町村（渓谷の所在地）</th>
+          <td class="detail-value"><%= @access.city %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">番地</th>
+          <td class="detail-value"><%= @access.house_number %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">建物</th>
+          <td class="detail-value"><%= @access.building %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">電話番号</th>
+          <td class="detail-value"><%= @access.phone_number %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">アクセス方法</th>
+          <td class="detail-value"><%= @access.access_plan %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<% if user_signed_in? %>
+  <% if current_user.id == @tweet.user_id %>
+    <p><%= link_to 'アクセス情報編集ページへ進む', edit_tweet_access_path(@access), method: :get %></p>
+  <% end %>
+<% end %>
+
+<p><%= link_to '詳細ページへ戻る', tweet_path(@tweet), method: :get %></p>
