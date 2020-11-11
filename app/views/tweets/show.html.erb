@@ -35,7 +35,7 @@
   </div>
 </div>
 
-<p><%= link_to 'アクセス情報ページへ進む', tweet_accesses_path(@tweet.id) %></p>
+<p><%= link_to 'アクセスページに進む', tweet_access_path(@tweet.id), method: :get %></p>
 
 <% if user_signed_in? %>
   <% if current_user.id == @tweet.user_id %>
@@ -43,7 +43,5 @@
     <p><%= link_to '投稿を削除する', tweet_path(@tweet.id), method: :delete, class:'tweet-destroy' %></p>
   <% end %>
 <% end %>
-
-<p><%= link_to 'アクセスページに進む', "#" %></p>
 
 <p><%= link_to 'トップページに戻る', "/" %></p>

@@ -40,7 +40,7 @@
 
 <% if user_signed_in? %>
   <% if current_user.id == @tweet.user_id %>
-    <p><%= link_to 'アクセス情報編集ページへ進む', '#', method: :get %></p>
+    <p><%= link_to 'アクセス情報編集ページへ進む', edit_tweet_access_path(@access), method: :get %></p>
   <% end %>
 <% end %>
 
