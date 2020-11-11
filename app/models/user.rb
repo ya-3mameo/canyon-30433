@@ -11,4 +11,8 @@ class User < ApplicationRecord
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX
+
+  validates :location, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/ }
+  validates :age, format: { with: /\A[0-9]+\z/ }
+  validates :canyon_number, format: { with: /\A[0-9]+\z/ }
 end
