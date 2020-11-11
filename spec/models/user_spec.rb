@@ -63,6 +63,23 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません')
       end
+
+      it 'locationが全角（漢字・ひらがな・カタカナ）でない場合は登録できない' do
+        @user.location = 'suzuki'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('現在お住まいの都道府県は不正な値です')
+      end
+      it 'ageが全角数字で保存できない' do
+        @user.age = '５'
+        @user.valid?
+        expect(@user.errors.full_messages).to include()
+      end
+      it 'canyon_numberが全角数字で保存できない' do
+        @user.canyon_number = '２３'
+        @user.valid?
+        expect(@user.errors.full_messages).to include()
+      end
+
     end
   end
 end
