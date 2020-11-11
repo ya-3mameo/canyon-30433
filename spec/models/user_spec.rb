@@ -72,14 +72,13 @@ RSpec.describe User, type: :model do
       it 'ageが全角数字で保存できない' do
         @user.age = '５'
         @user.valid?
-        expect(@user.errors.full_messages).to include()
+        expect(@user.errors.full_messages).to include
       end
       it 'canyon_numberが全角数字で保存できない' do
         @user.canyon_number = '２３'
         @user.valid?
-        expect(@user.errors.full_messages).to include()
+        expect(@user.errors.full_messages).to include
       end
-
     end
   end
 end
