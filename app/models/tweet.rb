@@ -1,7 +1,7 @@
 class Tweet < ApplicationRecord
   belongs_to :user
   has_one_attached :image
-  has_one :access
+  has_one :access, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
