@@ -1,10 +1,6 @@
 class AccessesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
-  def index
-    @tweet = Tweet.find(params[:tweet_id])
-    @access = Access.find(@tweet.access.id)
-  end
 
   def new
     @tweet = Tweet.find(params[:tweet_id])
@@ -19,6 +15,26 @@ class AccessesController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+  end
+
+  def show
+    @tweet = Tweet.find(params[:tweet_id])
+    @access = Access.find(@tweet.access.id)
+  end
+
+  def edit
+    @tweet = Tweet.find(params[:id])
+    @access = Access.find(params[:tweet_id])
+  end
+
+  def update
+    @tweet = Tweet.find(params[:id])
+    @access = Access.find(params[:tweet_id])
+    if @access.update(access_params)
+      redirect_to tweet_access_path(@tweet.id)
+    else
+      render :edit
     end
   end
 
