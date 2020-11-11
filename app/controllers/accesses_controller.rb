@@ -1,14 +1,15 @@
 class AccessesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-
+  before_action :set_tweet, only: [:new, :create, :show]
+  before_action :set_tweet_id, only: [:edit, :update]
+  before_action :set_access, only: [:show, :edit, :update]
+  before_action :move_to_index, only: [:edit, :update]
 
   def new
-    @tweet = Tweet.find(params[:tweet_id])
     @access = Access.new
   end
 
   def create
-    @tweet = Tweet.find(params[:tweet_id])
     @access = Access.new(access_params)
     if @access.valid?
       @access.save
@@ -19,18 +20,12 @@ class AccessesController < ApplicationController
   end
 
   def show
-    @tweet = Tweet.find(params[:tweet_id])
-    @access = Access.find(@tweet.access.id)
   end
 
   def edit
-    @tweet = Tweet.find(params[:id])
-    @access = Access.find(params[:tweet_id])
   end
 
   def update
-    @tweet = Tweet.find(params[:id])
-    @access = Access.find(params[:tweet_id])
     if @access.update(access_params)
       redirect_to tweet_access_path(@tweet.id)
     else
@@ -47,5 +42,23 @@ class AccessesController < ApplicationController
     ).merge(
       tweet_id: @tweet.id
     )
+  end
+
+  def move_to_index
+    @tweet = Tweet.find(params[:id])
+    @user = User.find(@tweet.user_id)
+    redirect_to root_path unless current_user == @user
+  end
+
+  def set_tweet
+    @tweet = Tweet.find(params[:tweet_id])
+  end
+
+  def set_tweet_id
+    @tweet = Tweet.find(params[:id])
+  end
+
+  def set_access
+    @access = Access.find(@tweet.access.id)
   end
 end
