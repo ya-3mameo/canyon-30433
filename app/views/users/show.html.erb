@@ -34,7 +34,7 @@
       </table>
 
       <% if user_signed_in? && current_user.id == @user.id %>
-        <p><%= link_to 'ユーザー情報編集ページへ進む', '#' %></p>
+        <p><%= link_to 'ユーザー情報編集ページへ進む', edit_user_registration_path, method: :get %></p>
       <% end %>
 
       <h2 class="page-heading">
