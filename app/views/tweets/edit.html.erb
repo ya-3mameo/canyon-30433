@@ -46,4 +46,4 @@
 <% end %>
 
 <p><%= link_to '詳細ページへ戻る', tweet_path, method: :get %></p>
-<p><%= link_to 'マイページへ戻る', '#' %></p>
+<p><%= link_to 'マイページへ', user_path(@tweet.user.id) %></p>
