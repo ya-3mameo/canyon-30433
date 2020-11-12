@@ -3,6 +3,9 @@ ja:
    attributes:
      user:
        nickname: ニックネーム
+       location: 現在お住まいの都道府県
+       age: 年齢
+       canyon_number: 訪れた渓谷の数
      tweet:
        title: 渓谷名
        concept: 「渓谷について」

@@ -4,17 +4,17 @@
   <%= render "shared/error_messages", model: f.object %>
 
   <div class="field">
-    <%= f.label :nickname %><br />
+    <%= f.label :nickname, "ユーザー名【必須】" %><br />
     <%= f.text_field :nickname, autofocus: true, placeholder:"例) keikokusann" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, "Eメールアドレス【必須】" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"PC・携帯どちらでも可" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, "パスワード【必須】" %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %>文字以下の半角英数字)</em>
     <% end %><br />
@@ -22,12 +22,50 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "パスワード確認用【必須】" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"同じパスワードを入力" %>
   </div>
 
+  <div class="field">
+    <%= f.label :location, "現在お住まいの都道府県（任意）" %><br />
+    <%= f.text_field :location, placeholder:"全角で入力" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age, "年齢（任意）" %><br />
+    <%= f.text_field :age, placeholder:"半角数字で入力（例）4" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :canyon_number, "訪れた渓谷の数（任意）" %><br />
+    <%= f.text_field :canyon_number, placeholder:"半角数字で入力" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hobby, "趣味など（任意）" %><br />
+    <%= f.text_area :hobby %>
+  </div>
+
+  <div class='form-text-wrap'>
+    <label class="form-text">生年月日（任意）</label>
+  </div>
+  <div class='input-birth-wrap'>
+    <%= raw sprintf(
+                f.date_select(
+                  :birthday,
+                  class:'select-birth',
+                  id:"birth-date",
+                  use_month_numbers: true,
+                  prompt:'--',
+                  start_year: 1930,
+                  end_year: (Time.now.year - 5),
+                  date_separator: '%s'),
+                " 年 ", " 月 ") + " 日 " %>
+  </div>
+
+
   <div class="actions">
-    <%= f.submit "新規登録" %>
+    <p><%= f.submit "新規登録" %></p>
   </div>
 <% end %>
 

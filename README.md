@@ -2,31 +2,19 @@
 
 ## usersテーブル
 
-| Column               | Type   | Options                   |
-| -------------------- | ------ | ------------------------- |
-| nickname             | string | null: false               |
-| email                | string | null: false, unique: true |
-| password             | string | null: false, unique: true |
+| Column        | Type    | Options                   |
+| ------------- | ------- | ------------------------- |
+| nickname      | string  | null: false               |
+| email         | string  | null: false, unique: true |
+| password      | string  | null: false, unique: true |
+| age           | integer |                           |
+| location      | string  |                           |
+| hobby         | text    |                           |
+| canyon_number | integer |                           |
+| birthday      | date    |                           |
 
 ### Association
  - has_many :tweets
- - has_one :profile
-
-
-## profileテーブル
-
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| age           | integer    |                                |
-| location      | string     |                                |
-| hobby         | text       |                                |
-| canyon_number | integer    | null: false                    |
-| birthday      | date       |                                |
-| user          | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :user
-
 
 ## tweetsテーブル
 
@@ -46,7 +34,7 @@
 - has_many :comments
 
 
-## addressesテーブル
+## accessesテーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
