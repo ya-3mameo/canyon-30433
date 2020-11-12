@@ -1,0 +1,70 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんのマイページ"%>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">ニックネーム</th>
+            <td class="table__col2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">年齢</th>
+            <td class="table__col2"><%= @user.age %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">現在お住まいの都道府県</th>
+            <td class="table__col2"><%= @user.location %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">趣味など</th>
+            <td class="table__col2"><%= @user.hobby %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">訪れた渓谷の数</th>
+            <td class="table__col2"><%= @user.canyon_number %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">生年月日</th>
+            <td class="table__col2"><%= @user.birthday %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <% if user_signed_in? && current_user.id == @user.id %>
+        <p><%= link_to 'ユーザー情報編集ページへ進む', '#' %></p>
+      <% end %>
+
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんの投稿" %>
+      </h2>
+      <ul>
+        <% @tweets.each do |tweet| %>
+          <% if @tweets.present? %>
+            <li>
+              <div>
+                <%= link_to image_tag(tweet.image, class: :card_img ), tweet_path(tweet.id), method: :get %>
+              </div>
+              <div>
+                <h3><%= link_to "渓谷名：#{tweet.title}", tweet_path(tweet.id), method: :get %></h3>
+              </div>
+            </li>
+          <% else %>
+            <li>
+              <div>
+                <h3>渓谷を投稿してね</h3>
+              </div>
+              <div>
+                <span>僕と渓谷</span>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<p><%= link_to 'トップページに戻る', "/" %></p>
