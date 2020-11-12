@@ -9,17 +9,15 @@
     <% @tweets.each do |tweet| %>
       <% if @tweets.present? %>
         <li>
-          <%= link_to tweet_path(tweet.id), method: :get do %>
           <div>
-            <%= image_tag tweet.image.variant(resize: '400x400') if tweet.image.attached? %>
+            <%= link_to image_tag(tweet.image, class: :card_img ), tweet_path(tweet.id), method: :get %>
           </div>
           <div>
-            <h3><%= tweet.title %></h3>
+            <h3><%= link_to tweet.title, tweet_path(tweet.id), method: :get %></h3>
           </div>
           <div>
-            <span>ユーザー：<%= tweet.user.nickname %></span>
+            <span><%= link_to "ユーザー：#{tweet.user.nickname}", user_path(tweet.user.id), method: :get %></span>
           </div>
-          <% end %>
         </li>
       <% else %>
         <li>
