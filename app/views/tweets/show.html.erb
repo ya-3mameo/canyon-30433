@@ -16,7 +16,7 @@
       <tbody>
         <tr>
           <th class="detail-item">ユーザー名</th>
-          <td class="detail-value"><%= @tweet.user.nickname %></td>
+          <td class="detail-value"><%= link_to  @tweet.user.nickname,  user_path(@tweet.user.id), method: :get %></td>
         </tr>
         <tr>
           <th class="detail-item">費用</th>
