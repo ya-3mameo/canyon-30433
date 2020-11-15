@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def move_to_index
     redirect_to root_path unless user_signed_in? && current_user.id == user.id
   end
