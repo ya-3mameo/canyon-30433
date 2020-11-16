@@ -10,7 +10,7 @@
 ## :computer: 本番環境
 <dl>
   <dt>接続先</dt>
-  <dd> :globe_with_meridians: URL :** https://canyon-30433.herokuapp.com/ **</dd>
+  <dd> :globe_with_meridians: URL : ** https://canyon-30433.herokuapp.com/ ** </dd>
   <!-- <dt>ID/Pass</dt> -->
   <!-- <dd>ID:</dd> -->
   <!-- <dd>Pass:</dd> -->
@@ -36,7 +36,7 @@
 
 
 ## :pencil2: 洗い出した要件
-![要件定義をまとめたスプレッドシートへ](https://docs.google.com/spreadsheets/d/1WLjTJX27z2lqwbzBtNjrI2SHRo8Z_fJL1LSGgUwuaM8/edit?usp=sharing)
+[要件定義をまとめたスプレッドシートへ](https://docs.google.com/spreadsheets/d/1WLjTJX27z2lqwbzBtNjrI2SHRo8Z_fJL1LSGgUwuaM8/edit?usp=sharing)
 
 
 ## :memo: DEMO
@@ -59,6 +59,7 @@
 ### ・ユーザーが「渓谷に行きたくなる」「簡単にアクセス方法を知る事ができる」ように、複数枚画像投稿機能を実装し、渓谷・アクセス情報の充実を図っていきます。
 ### ・ユーザーが欲しい情報を取得し易くするために、検索機能の充実を図っていきます。
 ### ・実装予定の機能
+- CSS作成
 - コメント機能
 - 都道府県別詳細表示機能
 - 検索機能
