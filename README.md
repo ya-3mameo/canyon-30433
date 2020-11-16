@@ -10,10 +10,10 @@
 ## :computer: 本番環境
 <dl>
   <dt>接続先</dt>
-  <dd> :globe_with_meridians: URL : ** https://canyon-30433.herokuapp.com/ ** </dd>
+  <dd> :globe_with_meridians: URL : https://canyon-30433.herokuapp.com/ </dd>
   <!-- <dt>ID/Pass</dt> -->
-  <!-- <dd>ID:</dd> -->
-  <!-- <dd>Pass:</dd> -->
+  <!-- <dd>ID : admin </dd> -->
+  <!-- <dd>Pass : 2222 </dd> -->
   <dt>投稿者</dt>
   <dd>メールアドレス : test@test.com</dd>
   <dd>パスワード : 1asdfg</dd>
