@@ -1,0 +1,30 @@
+.top-page-header {
+  width: 100vw;
+  background-color: cadetblue;
+}
+
+.list-right {
+  display: flex;
+  justify-content: flex-end;
+  line-height: 40px;
+}
+
+.user-nickname {
+  color: black;
+  margin: 2vw;
+}
+
+.logout {
+  color: black;
+  margin: 2vw;
+}
+
+.login {
+  color: black;
+  margin: 2vw;
+}
+
+.sign-up {
+  color: black;
+  margin: 2vw;
+}

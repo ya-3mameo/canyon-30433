@@ -1,4 +1,4 @@
-<h2>ログイン</h2>
+<h2 class="form-header-text">ログイン</h2>
 
 <%= form_with model: @user, url: new_user_session_path, class: 'registration-main', local: true do |f| %>
 
@@ -25,8 +25,8 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "ログイン" %>
+  <div class="login-btn">
+    <%= f.submit "ログイン" ,class: "login-blue-btn" %>
   </div>
 <% end %>
 

@@ -1,22 +1,26 @@
 <%= render "shared/header" %>
 
-<h1>僕と渓谷</h1>
-<p>cssはまだです</p>
+<div class='main'>
+  <div class='title-contents'>
+    <h1 class='title'>僕と渓谷</h1>
+    <p　class='service-explain'>行きたい渓谷を見つけよう！</p>
+  </div>
 
-<div>
-  <h2>渓谷一覧</h2>
-  <ul>
+  <h2 class='tweet-contents'>渓谷一覧</h2>
+  <ul class='tweet-lists'>
     <% @tweets.each do |tweet| %>
       <% if @tweets.present? %>
         <li>
-          <div>
-            <%= link_to image_tag(tweet.image, class: :card_img ), tweet_path(tweet.id), method: :get %>
+          <div class="tweet-image">
+            <%= link_to image_tag(tweet.image, class: "card_img" ), tweet_path(tweet.id), method: :get %>
           </div>
-          <div>
-            <h3><%= link_to tweet.title, tweet_path(tweet.id), method: :get %></h3>
-          </div>
-          <div>
-            <span><%= link_to "ユーザー：#{tweet.user.nickname}", user_path(tweet.user.id), method: :get %></span>
+          <div class="list">
+            <div class="tweet-title">
+              <%= link_to tweet.title, tweet_path(tweet.id), method: :get %>
+            </div>
+            <div class="tweet-nickname">
+              <%= link_to "投稿者：#{tweet.user.nickname}", user_path(tweet.user.id), method: :get %>
+            </div>
           </div>
         </li>
       <% else %>
@@ -33,4 +37,6 @@
   </ul>
 </div>
 
-<p><%= link_to '投稿ページへ進む', new_tweet_path %></p>
+<div class="tweet-btn">
+  <p><%= link_to '投稿する', new_tweet_path, class: "tweet-btn-text" %></p>
+</div>
