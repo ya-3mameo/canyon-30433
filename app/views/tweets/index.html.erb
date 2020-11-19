@@ -1,12 +1,12 @@
 <%= render "shared/header" %>
 
 <div class='main'>
-  <div class='title-contents'>
-    <h1 class='title'>僕と渓谷</h1>
-    <p　class='service-explain'>行きたい渓谷を見つけよう！</p>
+  <div class="tweet-contents">
+    <h2 class='tweet-contents-title'>渓谷一覧</h2>
+    <div class="create-tweet">
+      <a href="/tweets/new", class="create-tweet-text" >投稿する</a>
+    </div>
   </div>
-
-  <h2 class='tweet-contents'>渓谷一覧</h2>
   <ul class='tweet-lists'>
     <% @tweets.each do |tweet| %>
       <% if @tweets.present? %>
@@ -15,11 +15,11 @@
             <%= link_to image_tag(tweet.image, class: "card_img" ), tweet_path(tweet.id), method: :get %>
           </div>
           <div class="list">
-            <div class="tweet-title">
-              <%= link_to tweet.title, tweet_path(tweet.id), method: :get %>
+            <div>
+              <%= link_to tweet.title, tweet_path(tweet.id), method: :get, class: "tweet-title"%>
             </div>
-            <div class="tweet-nickname">
-              <%= link_to "投稿者：#{tweet.user.nickname}", user_path(tweet.user.id), method: :get %>
+            <div>
+              <%= link_to "投稿者：#{tweet.user.nickname}", user_path(tweet.user.id), method: :get, class: "tweet-nickname" %>
             </div>
           </div>
         </li>
@@ -37,6 +37,3 @@
   </ul>
 </div>
 
-<div class="tweet-btn">
-  <p><%= link_to '投稿する', new_tweet_path, class: "tweet-btn-text" %></p>
-</div>

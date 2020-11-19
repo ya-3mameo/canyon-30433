@@ -1,7 +1,14 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class="top-page-header">
+  <div class='title-contents'>
+    <h1 class='title'>僕と渓谷</h1>
+    <h3　class='service-explain'>行きたい渓谷を見つけよう！</h3>
+  </div>
+
   <div class="nav">
-    <ul class="list-right">
+    <ul class="list">
+      <li></li>
+      <li></li>
       <% if user_signed_in? %>
         <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
