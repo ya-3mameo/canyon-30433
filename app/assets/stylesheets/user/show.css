@@ -1,0 +1,42 @@
+/* タイトル */
+.user-contents {
+  padding: 40px 0 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-content-title {
+  font-size: 4vh;
+  border-bottom: 1px solid black;
+}
+
+/* ユーザー情報tableのcssは/tweets/showを参照 */
+
+
+/* 投稿 */
+/* 投稿画像のcssは/tweets/showを参照 */
+.user-tweet-title {
+  font-size: 2.3vh;
+  padding: 0 0 20px 60px;
+}
+
+/* ページ遷移ボタン */
+.user-show-nav {
+  height: 10vh;
+  background-color: darkseagreen;
+}
+
+.user-show-lists {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+li{
+  list-style: none;
+}
+
+.user-edit-btn {
+  color: black;
+}
