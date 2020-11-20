@@ -1,36 +1,43 @@
-<h1>アクセス情報投稿ページ</h1>
-
-<%= form_with model:@access, url: tweet_accesses_path(@tweet), local: true do |f| %>
-  <%= render 'shared/error_messages', model: f.object %>
-
-  <h2>アクセスについて</h2>
-  <div>
-    <p>都道府県（渓谷の所在地）【必須】</p>
-    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
-  </div>
-  <div>
-    <p>市区町村【必須】</p>
-    <%= f.text_field :city, class:"tweets-text", id:"tweet-city" %>
-  </div>
-  <div>
-    <p>番地（任意）</p>
-    <%= f.text_field :house_number, class:"tweets-text", id:"tweet-house" %>
-  </div>
-  <div>
-    <p>建物名（任意）</p>
-    <%= f.text_field :building, class:"tweets-text", id:"tweet-building" %>
-  </div>
-  <div>
-    <p>電話番号（任意）</p>
-    <%= f.text_field :phone_number, class:"tweets-text", id:"tweet-phone", placeholder:"半角数字" %>
-  </div>
-  <div>
-    <p>アクセス方法【必須】</p>
-    <%= f.text_area :access_plan, class:"tweets-text", id:"tweet-access", placeholder:"例）交通手段（利用駅、バス停など）、所用時間、目印など", rows:"7" , maxlength:"1000" %>
+<div class="main">
+  <div class="tweet-contents">
+    <h1 class="tweet-contents-title">アクセス情報投稿ページ</h1>
   </div>
 
-  <div>
-    <p><%= f.submit '投稿する' %></p>
-  </div>
+  <div class="form-content">
+    <%= form_with model:@access, url: tweet_accesses_path(@tweet), local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+      <div class="tweet-new-content">
+        <h2 class="tweet-new-title">アクセス情報を入力してください</h2>
+      </div>
+      <div>
+        <p class="form-text">都道府県（渓谷の所在地）【必須】</p>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+      </div>
+      <div>
+        <p class="form-text">市区町村【必須】</p>
+        <%= f.text_field :city, class:"small-field-2", id:"tweet-city" %>
+      </div>
+      <div>
+        <p class="form-text">番地（任意）</p>
+        <%= f.text_field :house_number, class:"small-field-1", id:"tweet-house" %>
+      </div>
+      <div>
+        <p class="form-text">建物名（任意）</p>
+        <%= f.text_field :building, class:"small-field-1", id:"tweet-building" %>
+      </div>
+      <div>
+        <p class="form-text">電話番号（任意）</p>
+        <%= f.text_field :phone_number, class:"small-field-3", id:"tweet-phone", placeholder:"半角数字" %>
+      </div>
+      <div>
+        <p class="form-text">アクセス方法【必須】</p>
+        <%= f.text_area :access_plan, class:"large-field", id:"tweet-access", placeholder:"例）交通手段（利用駅、バス停など）、所用時間、目印など", rows:"7" , maxlength:"1000" %>
+      </div>
 
-<% end %>
+      <div>
+        <p><%= f.submit '投稿する', class: "send" %></p>
+      </div>
+
+    <% end %>
+  </div>
+</div>
