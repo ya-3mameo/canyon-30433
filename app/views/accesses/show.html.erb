@@ -1,47 +1,49 @@
-<h1>アクセス情報</h1>
-
+<%= render "shared/header" %>
 
 <div class="access-show">
-  <div class="access--box">
-    <table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="detail-item">郵便番号</th>
-          <td class="detail-value"><%= @access.postal_number %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">都道府県（渓谷の所在地）</th>
-          <td class="detail-value"><%= @access.prefecture.name %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">市区町村（渓谷の所在地）</th>
-          <td class="detail-value"><%= @access.city %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">番地</th>
-          <td class="detail-value"><%= @access.house_number %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">建物</th>
-          <td class="detail-value"><%= @access.building %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">電話番号</th>
-          <td class="detail-value"><%= @access.phone_number %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">アクセス方法</th>
-          <td class="detail-value"><%= @access.access_plan %></td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="access-contents">
+    <h1 class="access-show-title">アクセス情報</h1>
   </div>
+  <div class="access-plan">
+    <%= "アクセス方法：#{@access.access_plan}" %>
+  </div>
+  <table class="detail-table">
+    <tbody>
+      <tr>
+        <th class="detail-item">郵便番号</th>
+        <td class="detail-value"><%= @access.postal_number %></td>
+      </tr>
+      <tr>
+        <th class="detail-item">都道府県（渓谷の所在地）</th>
+        <td class="detail-value"><%= @access.prefecture.name %></td>
+      </tr>
+      <tr>
+        <th class="detail-item">市区町村（渓谷の所在地）</th>
+        <td class="detail-value"><%= @access.city %></td>
+      </tr>
+      <tr>
+        <th class="detail-item">番地</th>
+        <td class="detail-value"><%= @access.house_number %></td>
+      </tr>
+      <tr>
+        <th class="detail-item">建物</th>
+        <td class="detail-value"><%= @access.building %></td>
+      </tr>
+      <tr>
+        <th class="detail-item">電話番号</th>
+        <td class="detail-value"><%= @access.phone_number %></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-<% if user_signed_in? %>
-  <% if current_user.id == @tweet.user_id %>
-    <p><%= link_to 'アクセス情報編集ページへ進む', edit_tweet_access_path(@access), method: :get %></p>
-  <% end %>
-<% end %>
-
-<p><%= link_to '詳細ページへ戻る', tweet_path(@tweet), method: :get %></p>
+<div class="access-show-nav">
+  <ul class="access-show-lists">
+    <% if user_signed_in? %>
+      <% if current_user.id == @tweet.user_id %>
+        <li><%= link_to 'アクセス情報編集ページへ進む', edit_tweet_access_path(@access), method: :get, class: "access-edit-btn" %></li>
+      <% end %>
+    <% end %>
+    <li><%= link_to '詳細ページへ戻る', tweet_path(@tweet), method: :get, class: "tweet-show-btn" %></li>
+  </ul>
+</div>
