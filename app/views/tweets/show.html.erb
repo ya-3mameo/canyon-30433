@@ -2,16 +2,17 @@
 
 <div class="tweet-show">
   <div class="tweet-box">
-    <h2 class="title">
+    <h2 class="tweet-show-title">
       <%= @tweet.title %>
     </h2>
-    <div class='tweet-img-content'>
-      <%= image_tag @tweet.image ,class:"tweet-img" %>
+    <div class='tweet-image-content'>
+      <%= image_tag @tweet.image ,class:"tweet-show-card" %>
     </div>
 
-    <div class="tweet-explain-box">
+    <div class="tweet-explain">
       <span><%= @tweet.concept %></span>
     </div>
+
     <table class="detail-table">
       <tbody>
         <tr>
@@ -33,15 +34,17 @@
       </tbody>
     </table>
   </div>
+
+  <div class="tweet-show-nav">
+    <ul class="tweet-show-lists">
+      <li><%= link_to 'アクセスページに進む', tweet_access_path(@tweet.id), method: :get, class: "access-btn" %></li>
+      <% if user_signed_in? %>
+        <% if current_user.id == @tweet.user_id %>
+          <li><%= link_to '投稿情報編集へ進む', edit_tweet_path(@tweet.id), method: :get, class: "tweet-edit-btn" %></li>
+          <li><%= link_to '投稿を削除する', tweet_path(@tweet.id), method: :delete, class:'tweet-destroy-btn' %></li>
+        <% end %>
+      <% end %>
+      <li><%= link_to 'トップページに戻る', "/", class: "tweet-top-btn" %></li>
+    </ul>
+  </div>
 </div>
-
-<p><%= link_to 'アクセスページに進む', tweet_access_path(@tweet.id), method: :get %></p>
-
-<% if user_signed_in? %>
-  <% if current_user.id == @tweet.user_id %>
-    <p><%= link_to '投稿情報編集へ進む', edit_tweet_path(@tweet.id), method: :get, class: "tweet-red-btn" %></p>
-    <p><%= link_to '投稿を削除する', tweet_path(@tweet.id), method: :delete, class:'tweet-destroy' %></p>
-  <% end %>
-<% end %>
-
-<p><%= link_to 'トップページに戻る', "/" %></p>
