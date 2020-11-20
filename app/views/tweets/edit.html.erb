@@ -1,49 +1,59 @@
-<h1>編集ページ</h1>
-
-<%= form_with model:@tweet, url: tweet_path, local: true do |f| %>
-  <%= render 'shared/error_messages', model: f.object %>
-
-  <div>
-    <p>渓谷名</p>
-    <%= f.text_area :title, class:"tweets-text", id:"tweet-name", placeholder:"40文字まで", maxlength:"40" %>
-  </div>
-  <div>
-    <p>渓谷について</p>
-    <%= f.text_area :concept, class:"tweets-text", id:"tweet-info", placeholder:"7文字以上1000文字以下", rows:"7" ,maxlength:"1000"%>
-  </div>
-  <div>
-    <p>費用</p>
-    <%= f.text_field :price, class:"tweets-text", id:"tweet-price", placeholder:"半角数字" %>
-  </div>
-  <div>
-    <p>都道府県（渓谷の所在地）</p>
-    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+<div class="main">
+  <div class="tweet-contents">
+    <h1 class="tweet-contents-title">渓谷情報編集ページ</h1>
   </div>
 
-  <div class='input-birth-wrap'>
-  <p>訪問日</p>
-    <%= raw sprintf(
-                f.date_select(
-                  :visit_day,
-                  class:'select-day',
-                  id:"visit-date",
-                  use_month_numbers: true,
-                  prompt:'--',
-                  start_year: 2000,
-                  end_year: (Time.now.year),
-                  date_separator: '%s'),
-                " 年 ", " 月 ") + " 日 " %>
-  </div>
-  <div>
-    <p>クリックして画像をアップロード</p>
-    <%= f.file_field :image, id:"tweet-image" %>
-  </div>
+  <div class="form-content">
+    <%= form_with model:@tweet, url: tweet_path, local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
 
-  <div>
-    <p><%= f.submit '変更する' %></p>
+      <div>
+        <p class="form-text">渓谷名</p>
+        <%= f.text_area :title, class:"small-field-1", id:"tweet-name", placeholder:"40文字まで", maxlength:"40" %>
+      </div>
+      <div>
+        <p class="form-text">渓谷について</p>
+        <%= f.text_area :concept, class:"large-field", id:"tweet-info", placeholder:"7文字以上1000文字以下", rows:"7" ,maxlength:"1000"%>
+      </div>
+      <div>
+        <p class="form-text">費用</p>
+        <%= f.text_field :price, class:"small-field-2", id:"tweet-price", placeholder:"半角数字" %>
+      </div>
+      <div>
+        <p class="form-text">都道府県（渓谷の所在地）</p>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+      </div>
+
+      <div class='input-birth-wrap'>
+        <p class="form-text">訪問日</p>
+        <%= raw sprintf(
+                    f.date_select(
+                      :visit_day,
+                      class:'select-day',
+                      id:"visit-date",
+                      use_month_numbers: true,
+                      prompt:'--',
+                      start_year: 2000,
+                      end_year: (Time.now.year),
+                      date_separator: '%s'),
+                    " 年 ", " 月 ") + " 日 " %>
+      </div>
+      <div>
+        <p class="form-text">クリックして画像をアップロード</p>
+        <%= f.file_field :image, id:"tweet-image" %>
+      </div>
+
+      <div>
+        <p><%= f.submit '変更する', class: "send" %></p>
+      </div>
+
+    <% end %>
   </div>
+</div>
 
-<% end %>
-
-<p><%= link_to '詳細ページへ戻る', tweet_path, method: :get %></p>
-<p><%= link_to 'マイページへ', user_path(@tweet.user.id) %></p>
+<div class="tweet-edit-nav">
+  <ul class="tweet-edit-lists">
+    <li><%= link_to '詳細ページへ戻る', tweet_path, method: :get, class: "tweet-show-btn" %></li> 
+    <li><%= link_to 'マイページへ', user_path(@tweet.user.id), class:"user-show-btn" %></li>
+  </ul>
+</div>
