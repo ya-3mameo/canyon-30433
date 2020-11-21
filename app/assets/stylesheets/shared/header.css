@@ -1,0 +1,45 @@
+.top-page-header {
+  width: 100vw;
+  background-color: cadetblue;
+  display: flex;
+}
+
+/* アプリ名 */
+.title-contents {
+  width: 60%;
+}
+
+.title-content {
+  display: flex;
+}
+
+.title {
+  font-size: 6vh;
+  padding: 10px 0 20px 30px;
+}
+
+.service-explain {
+  font-size: 2.5vh;
+  padding: 40px 0 20px 30px;
+}
+
+/* ナビゲーション */
+.nav {
+  width: 40%;
+  padding: 30px;
+  background-color: steelblue;
+}
+
+.list {
+  display: flex;
+  justify-content: space-around;
+}
+
+li{
+  list-style: none;
+}
+
+.user-nickname,.logout, .login, .sign-up {
+  color: black;
+  font-size: 2.5vh;
+}

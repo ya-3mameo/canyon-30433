@@ -1,0 +1,19 @@
+/* ページ遷移ボタン */
+.tweet-edit-nav {
+  height: 10vh;
+  background-color: darkseagreen;
+}
+
+.tweet-edit-lists {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+li{
+  list-style: none;
+}
+
+.user-show-btn {
+  color: black;
+}

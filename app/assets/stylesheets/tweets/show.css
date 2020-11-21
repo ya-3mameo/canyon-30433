@@ -1,0 +1,79 @@
+.tweet-show {
+  width: 100vw;
+}
+
+/* 投稿内容 */
+.tweet-box {
+  background-color: paleturquoise;
+}
+
+.tweet-show-title {
+  font-size: 4vh;
+  padding: 40px 0 20px 20px;
+}
+
+.tweet-image-content {
+  margin: 0px 20px 30px;
+}
+
+.tweet-show-card {
+  width: 30vw;
+  height: 30vh;
+}
+
+.tweet-explain {
+  text-align: center;
+  margin: 20px ;
+  font-size: 3vh;
+}
+
+.detail-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.detail-item {
+  border: 1px black solid;
+  padding: 10px;
+  font-size: 2vh;
+}
+
+.detail-value {
+  border: 1px black solid;
+  padding: 10px;
+  font-size: 2.2vh;
+}
+
+/* ページ遷移ボタン */
+.tweet-show-nav {
+  height: 10vh;
+  background-color: darkseagreen;
+}
+
+.tweet-show-lists {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+li{
+  list-style: none;
+}
+
+.access-btn {
+  color: black;
+}
+
+.tweet-edit-btn {
+  color: black;
+}
+
+.tweet-destroy-btn {
+  color: black;
+}
+
+.tweet-top-btn {
+  color: black;
+}

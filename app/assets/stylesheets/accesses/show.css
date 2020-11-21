@@ -1,0 +1,48 @@
+.access-show {
+  width: 100vw;
+  background-color: paleturquoise;
+}
+
+/* 投稿内容 */
+.access-contents {
+  padding: 40px 0 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.access-show-title {
+  font-size: 4vh;
+  border-bottom: 1px solid black;
+}
+
+.access-plan {
+  font-size: 2vh;
+  padding: 0 0 20px 60px;
+}
+
+/* tableのcssは/tweets/showを参照 */
+
+/* ページ遷移ボタン */
+.access-show-nav {
+  height: 10vh;
+  background-color: darkseagreen;
+}
+
+.access-show-lists {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+li{
+  list-style: none;
+}
+
+.access-edit-btn {
+  color: black;
+}
+
+.tweet-show-btn {
+  color: black;
+}

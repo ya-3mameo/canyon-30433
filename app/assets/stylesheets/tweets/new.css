@@ -1,0 +1,87 @@
+/* タイトル */
+
+
+/* 投稿フォーム */
+.form-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tweet-new-content {
+  padding: 10px 0 20px;
+}
+
+.tweet-new-title {
+  font-size: 3vh;
+  border-bottom: 1px solid black;
+}
+
+.form-text {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.small-field-1, .large-field {
+  width: 600px;
+  border: 1px white solid;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.small-field-1 {
+  height: 30px;
+}
+
+.large-field {
+  height: 170px;
+}
+
+.small-field-2 {
+  width: 100px;
+  height: 30px;
+  border: 1px white solid;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.select-box {
+  border: 1px white solid;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.input-birth-wrap {
+  margin-bottom: 20px;
+}
+
+.input-birth-wrap>select {
+  width: 80px;
+  height: 30px;
+  padding-left: 10px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.send {
+  width: 100px;
+  height: 40px;
+  margin: 30px auto 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ページ遷移ボタン */
+.tweet-new-nav {
+  height: 10vh;
+  background-color: darkseagreen;
+  display: flex;
+  align-items: center;
+}
+
+.only-top-btn {
+  padding-left: 20px;
+  color: black;
+}
