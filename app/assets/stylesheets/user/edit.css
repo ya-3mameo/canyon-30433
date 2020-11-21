@@ -1,0 +1,20 @@
+/* ページ遷移ボタン */
+.user-edit-nav {
+  height: 10vh;
+  background-color: darkseagreen;
+}
+
+.user-edit-lists {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+li{
+  list-style: none;
+}
+
+.user-destroy-btn {
+  color: black;
+  cursor: pointer;
+}
