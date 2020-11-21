@@ -7,17 +7,20 @@
 /* アプリ名 */
 .title-contents {
   width: 60%;
-  margin: 10px 0 0 30px;
+}
+
+.title-content {
   display: flex;
-  align-items: flex-end;
 }
 
 .title {
   font-size: 6vh;
+  padding: 10px 0 20px 30px;
 }
 
 .service-explain {
-
+  font-size: 2.5vh;
+  padding: 40px 0 20px 30px;
 }
 
 /* ナビゲーション */
@@ -36,20 +39,7 @@ li{
   list-style: none;
 }
 
-.user-nickname {
+.user-nickname,.logout, .login, .sign-up {
   color: black;
-}
-
-
-.logout {
-  color: black;
-}
-
-
-.login {
-  color: black;
-}
-
-.sign-up {
-  color: black;
+  font-size: 2.5vh;
 }
