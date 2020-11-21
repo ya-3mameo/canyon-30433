@@ -11,9 +11,9 @@
 <dl>
   <dt>接続先</dt>
   <dd> :globe_with_meridians: URL : https://canyon-30433.herokuapp.com/ </dd>
-  <!-- <dt>ID/Pass</dt> -->
-  <!-- <dd>ID : admin </dd> -->
-  <!-- <dd>Pass : 2222 </dd> -->
+  <dt>ID/Pass</dt>
+  <dd>ID : admin </dd>
+  <dd>Pass : 2222 </dd>
   <dt>投稿者</dt>
   <dd>メールアドレス : test@test.com</dd>
   <dd>パスワード : 1asdfg</dd>
@@ -42,24 +42,24 @@
 ## :memo: DEMO
 ## 渓谷の情報を投稿した後に、渓谷へのアクセス情報を投稿する機能を実装しました。
 ### :one: 渓谷情報投稿機能
-![渓谷情報投稿機能](https://user-images.githubusercontent.com/71677145/99180692-da287300-276b-11eb-9d7d-0fad6ea7b9a4.png)
+![渓谷情報投稿機能](https://user-images.githubusercontent.com/71677145/99872986-ed34ba80-2c25-11eb-8ab0-7466c0fa7c94.png)
 ### :two: アクセス情報投稿機能
-![アクセス情報投稿機能](https://user-images.githubusercontent.com/71677145/99180695-e3b1db00-276b-11eb-97b1-d58dc7f8d9b2.png)
+![アクセス情報投稿機能](https://user-images.githubusercontent.com/71677145/99873263-02a9e480-2c26-11eb-9666-bc4a90a2d01f.png)
 ### :three: 投稿後のトップページ
-![投稿後のトップページ](https://user-images.githubusercontent.com/71677145/99180698-eb717f80-276b-11eb-8c95-6b7ebdf44b43.png)
+![投稿後のトップページ](https://user-images.githubusercontent.com/71677145/99873596-1c4b2c00-2c26-11eb-996e-8691d4afef17.png)
 ## 各ページの表示情報を少なくする事で、情報を把握し易くしました。
 ### :one: 投稿詳細ページ
-![投稿詳細ページ](https://user-images.githubusercontent.com/71677145/99180752-6175e680-276c-11eb-9638-2eb99365d358.png)
+![投稿詳細ページ](https://user-images.githubusercontent.com/71677145/99873817-2d943880-2c26-11eb-880a-58e832ef0bcd.png)
 ### :two: アクセス情報詳細ページ
-![アクセス情報詳細ページ](https://user-images.githubusercontent.com/71677145/99180756-6470d700-276c-11eb-80d1-4397f10bd11a.png)
+![アクセス情報詳細ページ](https://user-images.githubusercontent.com/71677145/99873853-3edd4500-2c26-11eb-825b-260844c8762f.png)
 
 
 ## :speech_balloon: 課題
-### ・シンプルな表示画面を意識して、装飾します。
+### ~~・シンプルな表示画面を意識して、装飾します。 ~~
 ### ・ユーザーが「渓谷に行きたくなる」「簡単にアクセス方法を知る事ができる」ように、複数枚画像投稿機能を実装し、渓谷・アクセス情報の充実を図っていきます。
 ### ・ユーザーが欲しい情報を取得し易くするために、検索機能の充実を図っていきます。
 ### ・実装予定の機能
-- CSS作成
+- ~~ CSS作成 ~~
 - コメント機能
 - 都道府県別詳細表示機能
 - 検索機能
