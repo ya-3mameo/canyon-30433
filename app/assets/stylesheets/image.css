@@ -1,0 +1,5 @@
+.preview-image {
+  width: 33vw;
+  height: 33vh;
+  object-fit: contain;
+}
