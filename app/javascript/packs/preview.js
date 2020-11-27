@@ -12,7 +12,8 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )){
       ImageList.appendChild(imageElement);
     };
 
-    document.getElementById('message-image').addEventListener('change', function(e){
+    const MessageImage = document.getElementById('message-image') || document.createElement('input')
+    MessageImage.addEventListener('change', function(e){
       const imageContent = document.querySelector('img');
       if (imageContent){
         imageContent.remove();
